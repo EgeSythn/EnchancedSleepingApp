@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <!-- putting meta data about application/page -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleeptime</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<!-- content of the page -->
+<h1>SleepTime App</h1>
+<p>I want to fall asleep at...</p>
+<select>
+    <option>hh</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
+</select>
+<select>
+    <option>mm</option>
+    <option>00</option>
+    <option>05</option>
+    <option>10</option>
+    <option>15</option>
+    <option>20</option>
+    <option>25</option>
+    <option>30</option>
+    <option>35</option>
+    <option>40</option>
+    <option>45</option>
+    <option>50</option>
+    <option>55</option>
+</select>
+<select>
+    <option>PM</option>
+    <option>AM</option>
+</select>
+<br /><br />
+<button onclick="handleOnClick();">CALCULATE</button>
+
+<div class="output">
+    <p>It takes the average humnan 14 minutes to fall asleep.</p>
+    <p>If you head to bed right now, you should try to wake up at one of the following times:</p>
+
+    <!-- class can be applied to many, id is supposed to be unique-->
+    <p id="hours">
+        1:58 PM <br />
+        3:28 PM <br />
+        4:58 PM <br />
+        6:28 PM <br />
+        7:58 PM <br />
+        9:28 PM <br />
+    </p>
+    <p>A good night's sleep consists of 5-6 complete sleep cycles.</p>
+</div>
+<script src="script.js"></script>
+</body>
+
+</html>

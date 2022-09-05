@@ -4,46 +4,38 @@ const colors = [
     "rgb(150, 105, 254)",
     "rgb(140, 140, 255)",
     "rgb(187, 187, 255)",
-    "rgb(143, 254, 221)"
-]
-
-function createWakeUpTimeElement(time, cycle) {
+    "rgb(143, 254, 221)",
+  ]
+  
+  function createWakeUpTimeElement(time, cycle) {
     let elm = document.createElement("div");
     elm.innerText = time;
     elm.style.color = colors[cycle];
     return elm;
-}
-
-function handleOnClick() {
+  }
+  
+  function handleOnClick() {
     let output = document.querySelector(".output");
     output.style.display = "block";
-
+  
     let hours = document.getElementById("hours");
-    hours.innerHTML = ""
-
+    hours.innerHTML = "";
+  
     let hh = document.getElementById("hh").value;
     let mm = document.getElementById("mm").value;
     let ampm = document.getElementById("ampm").value;
-
     hh = ampm === "PM" ? Number.parseInt(hh) + 12 : hh;
-    
     let now = new Date();
-
-    // if we add an offset (lets say it takes 14 minutes to fall asleep)
     now.setHours(hh);
     now.setMinutes(mm);
-
+  
+    // calculate sleep cycles!
     for (let i = 1; i <= 6; i++) {
-        now.setMinutes(now.getMinutes() + 90);
-        const elm = createWakeUpTimeElement(
-            now.toLocaleDateString(
-                "en-us",
-                {timeStyle: "short"}
-            ),
-            i
-        )
-        hours.appendChild(elm);
-    }    
-}
-
-
+      now.setMinutes(now.getMinutes() + 90);
+      const elm = createWakeUpTimeElement(
+        now.toLocaleTimeString("en-US", { timeStyle: "short" }),
+        i
+      )
+      hours.appendChild(elm);
+    } 
+  }

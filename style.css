@@ -6,7 +6,7 @@ body {
 
 .output {
     border: 3px solid white;
-    margin-top: 20px;
+    margin-top: 1em 5em 1em 5em;
     display: none;
     padding: 2em;
 }

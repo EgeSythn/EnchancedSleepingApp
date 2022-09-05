@@ -27,11 +27,18 @@ function createWakeUpTimeElement(time, cycle) {
 function onClickHelper() {
     let hours = document.getElementById("hours");
     hours.innerHTML = ""
+
+    let hh = document.getElementById("hh").value;
+    let mm = document.getElementById("mm").value;
+    let ampm = document.getElementById("ampm").value;
+
+    hh = ampm === "PM" ? hh + 12 : hh;
+    
     let now = new Date();
 
-
     // if we add an offset (lets say it takes 14 minutes to fall asleep)
-    now.setMinutes(now.getMinutes() + 14);
+    now.setHours(hh);
+    now.setMinutes(mm);
 
     for (let i = 0; i < 6; i++) {
         now.setMinutes(now.getMinutes() + 90);

@@ -32,7 +32,7 @@ function onClickHelper() {
     let mm = document.getElementById("mm").value;
     let ampm = document.getElementById("ampm").value;
 
-    hh = ampm === "PM" ? hh + 12 : hh;
+    hh = ampm === "PM" ? hh + Number.parseInt(12) : hh;
     
     let now = new Date();
 
@@ -40,7 +40,7 @@ function onClickHelper() {
     now.setHours(hh);
     now.setMinutes(mm);
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 1; i <= 6; i++) {
         now.setMinutes(now.getMinutes() + 90);
         const elm = createWakeUpTimeElement(
             now.toLocaleDateString(

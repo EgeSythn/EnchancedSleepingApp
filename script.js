@@ -5,7 +5,7 @@ const colors = [
     "rgb(140, 140, 255)",
     "rgb(187, 187, 255)",
     "rgb(143, 254, 221)",
-  ]
+]
   
   function createWakeUpTimeElement(time, cycle) {
     let elm = document.createElement("div");

@@ -4,27 +4,20 @@ const colors = [
     "rgb(150, 105, 254)",
     "rgb(140, 140, 255)",
     "rgb(187, 187, 255)",
-    "rgb(143, 254, 221)",
+    "rgb(143, 254, 221)"
 ]
+
+function createWakeUpTimeElement(time, cycle) {
+    let elm = document.createElement("div");
+    elm.innerText = time;
+    elm.style.color = colors[cycle];
+    return elm;
+}
 
 function handleOnClick() {
     let output = document.querySelector(".output");
-    if (output.style.display == "none") {
-        output.style.display = "block";
-        onClickHelper();
-    } else {
-        output.style.display = "none";
-    }
-}
+    output.style.display = "block";
 
-function createWakeUpTimeElement(time, cycle) {
-      let elm = document.createElement("div");
-      elm.innerText = time;
-      elm.style.color = colors[cycle];
-      return elm;
-}
-
-function onClickHelper() {
     let hours = document.getElementById("hours");
     hours.innerHTML = ""
 
@@ -32,7 +25,7 @@ function onClickHelper() {
     let mm = document.getElementById("mm").value;
     let ampm = document.getElementById("ampm").value;
 
-    hh = ampm === "PM" ? hh + Number.parseInt(12) : hh;
+    hh = ampm === "PM" ? Number.parseInt(hh) + 12 : hh;
     
     let now = new Date();
 
@@ -47,7 +40,10 @@ function onClickHelper() {
                 "en-us",
                 {timeStyle: "short"}
             ),
+            i
         )
         hours.appendChild(elm);
-    }
+    }    
 }
+
+

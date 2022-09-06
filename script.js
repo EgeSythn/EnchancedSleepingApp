@@ -24,6 +24,7 @@ const colors = [
     let hh = document.getElementById("hh").value;
     let mm = document.getElementById("mm").value;
     let ampm = document.getElementById("ampm").value;
+
     hh = ampm === "PM" ? Number.parseInt(hh) + 12 : hh;
     let now = new Date();
     now.setHours(hh);
